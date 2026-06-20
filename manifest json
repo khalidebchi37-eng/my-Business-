@@ -1,0 +1,23 @@
+{
+  "name": "MyBusiness",
+  "short_name": "MyBusiness",
+  "description": "تطبيق MyBusiness للربح من مشاهدة الإعلانات وتحويل العملات إلى دينار جزائري",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#f0b400",
+  "background_color": "#0d1117",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192.png?text=MB",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512.png?text=MB",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
