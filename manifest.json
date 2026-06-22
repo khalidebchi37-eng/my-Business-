@@ -1,23 +1,13 @@
 {
-  "name": "MyBusiness",
-  "short_name": "MyBusiness",
-  "description": "تطبيق MyBusiness للربح من مشاهدة الإعلانات وتحويل العملات إلى دينار جزائري",
-  "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#f0b400",
   "background_color": "#0d1117",
-  "lang": "ar",
   "dir": "rtl",
-  "icons": [
-    {
-      "src": "https://via.placeholder.com/192x192.png?text=MB",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://via.placeholder.com/512x512.png?text=MB",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "display": "standalone",
+  "name": "MyBusiness",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "MyBusiness",
+  "start_url": "/",
+  "theme_color": "#f0b400",
+  "id": "mybusiness-earn-app",
+  "description": "MyBusiness - Earn from Ads\n\nMyBusiness is a simple and fun app that lets you earn real rewards by watching short video ads. Collect coins, gems, and points, then convert them into real money!"
 }
