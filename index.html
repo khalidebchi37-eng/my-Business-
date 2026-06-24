@@ -8,7 +8,6 @@
     <title>MyBusiness - الإصدار المتقدم</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* (كل الـ CSS الخاص بالتطبيق موجود هنا - لم يتغير) */
         * {
             margin: 0;
             padding: 0;
@@ -431,7 +430,7 @@
                 🔗 <span id="linkLabel">رابط التطبيق</span>: <span style="color:#f0b400;" id="appLink">https://my-business-648s.onrender.com</span>
             </div>
             <div style="font-size:9px; color:#30363d; margin-top:4px;">
-                ca-app-pub-9827427994409624/1680370601
+                ca-app-pub-3940256099942544/5224354917
             </div>
         </div>
 
@@ -443,6 +442,9 @@
     <script>
         // ====== رابط التطبيق ======
         const APP_URL = 'https://my-business-648s.onrender.com';
+
+        // ====== رقم AdMob التجريبي (مباشر للاختبار) ======
+        const AD_UNIT_ID = 'ca-app-pub-3940256099942544/5224354917';
 
         // ====== الترجمة ======
         const translations = {
@@ -519,17 +521,523 @@
                 ach_50_gems: '💎 50 جوهرة'
             },
             en: {
-                // ... الترجمة الإنجليزية (محذوفة للاختصار، لكنها موجودة في الكود الأصلي)
+                appTitle: '💰 MyBusiness',
+                appSub: 'Earn gold, gems & points',
+                balanceTitle: 'My Balance',
+                labelCoins: '💰 Coins',
+                labelGems: '💎 Gems',
+                labelPoints: '⭐ Points',
+                labelWithdraw: '💵 Withdraw (DZD)',
+                exchangeRate: '💎 1 Gem = 10 Coins = 10 DZD',
+                levelLabel: 'Level:',
+                earnTitle: 'Earn Now',
+                btnWatchAd: 'Watch Ad',
+                btnWatchAdSmall: '+50 Coins',
+                btnWatchGem: 'Watch Ad',
+                btnWatchGemSmall: '+5 Gems',
+                btnGame: 'Play Game',
+                btnGameSmall: '+10 Points',
+                btnDaily: 'Daily Reward',
+                btnDailySmall: '100 Coins + 10 Gems',
+                wheelTitle: 'Spin Wheel',
+                wheelBtn: 'Spin Wheel (50 Coins)',
+                challengesTitle: 'Daily Challenges',
+                challenge1Label: '📺 Watch 5 Ads',
+                challenge2Label: '🎮 Play Game 3 Times',
+                challenge3Label: '📤 Share App',
+                achievementsTitle: 'Achievements',
+                ach1: '🎯 First Ad',
+                ach2: '🔒 100 Ads',
+                ach3: '🔒 1000 Coins',
+                ach4: '🔒 50 Gems',
+                moreTitle: 'More',
+                btnWithdraw: 'Withdraw Earnings',
+                btnShare: 'Share App',
+                btnBonus: 'Bonus Ad',
+                btnBonusSmall: '+25 Coins',
+                btnPeak: 'Peak Time',
+                btnPeakSmall: 'Double Rewards!',
+                donateTitle: 'Support the App',
+                donateText: '❤️ Donate Now',
+                donateSub: 'Help us develop the app and add new features',
+                servicesTitle: 'Our Services',
+                s1: 'App Dev',
+                s2: 'Web Design',
+                s3: 'UI Design',
+                s4: 'Automation',
+                s5: 'Consulting',
+                s6: 'Maintenance',
+                linkLabel: 'App Link',
+                footerText: '© 2026 MyBusiness | 100% Free',
+                notEnoughCoins: '⚠️ You need 50 coins to spin!',
+                dailyRewardDone: '⚠️ You already got your daily reward! Come back tomorrow.',
+                withdrawError: '⚠️ Your balance {amount} DZD - Minimum 100 DZD',
+                withdrawSuccess: '✅ Withdraw request of {amount} DZD received!',
+                shareCopied: '✅ Link copied!',
+                coinEarned: '✅ Earned {amount} coins!',
+                gemEarned: '✅ Earned {amount} gems!',
+                pointEarned: '✅ Earned {amount} points!',
+                challengeComplete: '🎯 Completed challenge {name}! +{reward}',
+                achievementNew: '🏆 New achievement: {name}!',
+                peakActive: '⏰ Peak time active! Double rewards for one hour',
+                peakInactive: '⏰ Peak time inactive',
+                wheelSpin: '🎉 Won {prize}!',
+                wheelLose: '😅 Better luck next time!',
+                gameWin: '🎉 You won! +10 Points',
+                gameLose: '❌ You lost! The number was {number}',
+                donateSuccess: '❤️ Thank you for your support! Every donation helps us improve the app.',
+                donateError: '⚠️ An error occurred, please try again.',
+                ach_first_ad: '🎯 First Ad',
+                ach_100_ads: '🏅 100 Ads',
+                ach_1000_coins: '💰 1000 Coins',
+                ach_50_gems: '💎 50 Gems'
             },
             fr: {
-                // ... الترجمة الفرنسية (محذوفة للاختصار، لكنها موجودة في الكود الأصلي)
+                appTitle: '💰 MyBusiness',
+                appSub: 'Gagnez or, gemmes & points',
+                balanceTitle: 'Mon Solde',
+                labelCoins: '💰 Pièces',
+                labelGems: '💎 Gemmes',
+                labelPoints: '⭐ Points',
+                labelWithdraw: '💵 Retrait (DZD)',
+                exchangeRate: '💎 1 Gemme = 10 Pièces = 10 DZD',
+                levelLabel: 'Niveau:',
+                earnTitle: 'Gagnez Maintenant',
+                btnWatchAd: 'Voir la pub',
+                btnWatchAdSmall: '+50 Pièces',
+                btnWatchGem: 'Voir la pub',
+                btnWatchGemSmall: '+5 Gemmes',
+                btnGame: 'Jouer',
+                btnGameSmall: '+10 Points',
+                btnDaily: 'Récompense',
+                btnDailySmall: '100 Pièces + 10 Gemmes',
+                wheelTitle: 'Roue de la chance',
+                wheelBtn: 'Tourner (50 Pièces)',
+                challengesTitle: 'Défis du jour',
+                challenge1Label: '📺 5 pubs',
+                challenge2Label: '🎮 Jouer 3 fois',
+                challenge3Label: '📤 Partager',
+                achievementsTitle: 'Succès',
+                ach1: '🎯 1ère pub',
+                ach2: '🔒 100 pubs',
+                ach3: '🔒 1000 pièces',
+                ach4: '🔒 50 gemmes',
+                moreTitle: 'Plus',
+                btnWithdraw: 'Retirer',
+                btnShare: 'Partager',
+                btnBonus: 'Pub bonus',
+                btnBonusSmall: '+25 Pièces',
+                btnPeak: 'Heure de pointe',
+                btnPeakSmall: 'Récompenses doublées!',
+                donateTitle: 'Soutenez l\'app',
+                donateText: '❤️ Faire un don',
+                donateSub: 'Aidez-nous à développer l\'application et à ajouter de nouvelles fonctionnalités',
+                servicesTitle: 'Nos services',
+                s1: 'App Dev',
+                s2: 'Web Design',
+                s3: 'UI Design',
+                s4: 'Automation',
+                s5: 'Consulting',
+                s6: 'Maintenance',
+                linkLabel: 'Lien app',
+                footerText: '© 2026 MyBusiness | 100% Gratuit',
+                notEnoughCoins: '⚠️ 50 pièces nécessaires pour tourner!',
+                dailyRewardDone: '⚠️ Récompense déjà reçue! Reviens demain.',
+                withdrawError: '⚠️ Solde {amount} DZD - Minimum 100 DZD',
+                withdrawSuccess: '✅ Demande de retrait {amount} DZD reçue!',
+                shareCopied: '✅ Lien copié!',
+                coinEarned: '✅ Gagné {amount} pièces!',
+                gemEarned: '✅ Gagné {amount} gemmes!',
+                pointEarned: '✅ Gagné {amount} points!',
+                challengeComplete: '🎯 Défi {name} complété! +{reward}',
+                achievementNew: '🏆 Nouveau succès: {name}!',
+                peakActive: '⏰ Heure de pointe active! Récompenses doublées',
+                peakInactive: '⏰ Heure de pointe inactive',
+                wheelSpin: '🎉 Gagné {prize}!',
+                wheelLose: '😅 Pas de chance!',
+                gameWin: '🎉 Gagné! +10 Points',
+                gameLose: '❌ Perdu! Le nombre était {number}',
+                donateSuccess: '❤️ Merci pour votre soutien! Chaque don nous aide à améliorer l\'application.',
+                donateError: '⚠️ Une erreur est survenue, veuillez réessayer.',
+                ach_first_ad: '🎯 1ère pub',
+                ach_100_ads: '🏅 100 pubs',
+                ach_1000_coins: '💰 1000 pièces',
+                ach_50_gems: '💎 50 gemmes'
             }
         };
 
-        // ... باقي الكود (دوال الترجمة، بيانات المستخدم، الأزرار، إلخ) كما هو موجود في الكود الأصلي ...
-        // (لم يتغير أي شيء في الـ JavaScript، فقط تم إضافة رابط manifest.json في الـ HTML)
+        let currentLang = 'ar';
 
-        // ====== تنبيه: هذا الكود مختصر للعرض. يجب نسخ الكود الكامل من الرد السابق مع إضافة السطر الجديد.
+        function applyLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('appTitle').textContent = t.appTitle;
+            document.getElementById('appSub').textContent = t.appSub;
+            document.getElementById('balanceTitle').textContent = t.balanceTitle;
+            document.getElementById('labelCoins').textContent = t.labelCoins;
+            document.getElementById('labelGems').textContent = t.labelGems;
+            document.getElementById('labelPoints').textContent = t.labelPoints;
+            document.getElementById('labelWithdraw').textContent = t.labelWithdraw;
+            document.getElementById('exchangeRate').innerHTML = t.exchangeRate;
+            document.getElementById('levelLabel').textContent = t.levelLabel;
+            document.getElementById('earnTitle').textContent = t.earnTitle;
+            document.getElementById('btnWatchAd').textContent = t.btnWatchAd;
+            document.getElementById('btnWatchAdSmall').textContent = t.btnWatchAdSmall;
+            document.getElementById('btnWatchGem').textContent = t.btnWatchGem;
+            document.getElementById('btnWatchGemSmall').textContent = t.btnWatchGemSmall;
+            document.getElementById('btnGame').textContent = t.btnGame;
+            document.getElementById('btnGameSmall').textContent = t.btnGameSmall;
+            document.getElementById('btnDaily').textContent = t.btnDaily;
+            document.getElementById('btnDailySmall').textContent = t.btnDailySmall;
+            document.getElementById('wheelTitle').textContent = t.wheelTitle;
+            document.getElementById('wheelBtn').textContent = t.wheelBtn;
+            document.getElementById('challengesTitle').textContent = t.challengesTitle;
+            document.getElementById('challenge1Label').textContent = t.challenge1Label;
+            document.getElementById('challenge2Label').textContent = t.challenge2Label;
+            document.getElementById('challenge3Label').textContent = t.challenge3Label;
+            document.getElementById('achievementsTitle').textContent = t.achievementsTitle;
+            document.getElementById('ach1').textContent = t.ach1;
+            document.getElementById('ach2').textContent = t.ach2;
+            document.getElementById('ach3').textContent = t.ach3;
+            document.getElementById('ach4').textContent = t.ach4;
+            document.getElementById('moreTitle').textContent = t.moreTitle;
+            document.getElementById('btnWithdraw').textContent = t.btnWithdraw;
+            document.getElementById('btnShare').textContent = t.btnShare;
+            document.getElementById('btnBonus').textContent = t.btnBonus;
+            document.getElementById('btnBonusSmall').textContent = t.btnBonusSmall;
+            document.getElementById('btnPeak').textContent = t.btnPeak;
+            document.getElementById('btnPeakSmall').textContent = t.btnPeakSmall;
+            document.getElementById('donateTitle').textContent = t.donateTitle;
+            document.getElementById('donateText').textContent = t.donateText;
+            document.getElementById('donateSub').textContent = t.donateSub;
+            document.getElementById('servicesTitle').textContent = t.servicesTitle;
+            document.getElementById('s1').textContent = t.s1;
+            document.getElementById('s2').textContent = t.s2;
+            document.getElementById('s3').textContent = t.s3;
+            document.getElementById('s4').textContent = t.s4;
+            document.getElementById('s5').textContent = t.s5;
+            document.getElementById('s6').textContent = t.s6;
+            document.getElementById('linkLabel').textContent = t.linkLabel;
+            document.getElementById('footerText').textContent = t.footerText;
+
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+            currentLang = lang;
+            localStorage.setItem('mybusiness_lang', lang);
+        }
+
+        document.getElementById('langAr').onclick = () => applyLanguage('ar');
+        document.getElementById('langEn').onclick = () => applyLanguage('en');
+        document.getElementById('langFr').onclick = () => applyLanguage('fr');
+
+        const savedLang = localStorage.getItem('mybusiness_lang') || 'ar';
+        applyLanguage(savedLang);
+
+        // ====== بيانات المستخدم ======
+        let userData = JSON.parse(localStorage.getItem('mybusiness_data')) || {
+            coins: 100,
+            gems: 5,
+            points: 0,
+            withdrawable: 0,
+            totalAds: 0,
+            gamesPlayed: 0,
+            shares: 0,
+            lastDaily: null,
+            achievements: ['first_ad'],
+            challenge1_done: false,
+            challenge2_done: false,
+            challenge3_done: false,
+            level: 'برونزي'
+        };
+
+        function updateUI() {
+            document.getElementById('coinsDisplay').textContent = userData.coins;
+            document.getElementById('gemsDisplay').textContent = userData.gems;
+            document.getElementById('pointsDisplay').textContent = userData.points;
+            document.getElementById('withdrawDisplay').textContent = userData.withdrawable;
+
+            let level = 'برونزي';
+            if (userData.totalAds >= 500) level = '💎 ألماسي';
+            else if (userData.totalAds >= 100) level = '🥇 ذهبي';
+            else if (userData.totalAds >= 50) level = '🥈 فضي';
+            document.getElementById('levelDisplay').textContent = level;
+            userData.level = level;
+
+            document.getElementById('challenge1').innerHTML = `${Math.min(userData.totalAds, 5)}/5 <span class="badge">+50 عملة</span>`;
+            document.getElementById('challenge2').innerHTML = `${Math.min(userData.gamesPlayed, 3)}/3 <span class="badge">+30 نقطة</span>`;
+            document.getElementById('challenge3').innerHTML = `${Math.min(userData.shares, 1)}/1 <span class="badge">+100 عملة</span>`;
+
+            localStorage.setItem('mybusiness_data', JSON.stringify(userData));
+        }
+
+        function updateWithdrawable() {
+            userData.withdrawable = userData.coins + (userData.gems * 10);
+            updateUI();
+        }
+
+        function showMessage(text, type) {
+            const msg = document.getElementById('message');
+            msg.className = 'message ' + type;
+            msg.textContent = text;
+            setTimeout(() => { msg.className = 'message'; }, 4000);
+        }
+
+        function addCoins(amount) {
+            userData.coins += amount;
+            updateWithdrawable();
+            const t = translations[currentLang];
+            showMessage(t.coinEarned.replace('{amount}', amount), 'success');
+            checkAchievements();
+            checkChallenges();
+        }
+
+        function addGems(amount) {
+            userData.gems += amount;
+            updateWithdrawable();
+            const t = translations[currentLang];
+            showMessage(t.gemEarned.replace('{amount}', amount), 'success');
+            checkAchievements();
+        }
+
+        function addPoints(amount) {
+            userData.points += amount;
+            updateUI();
+            const t = translations[currentLang];
+            showMessage(t.pointEarned.replace('{amount}', amount), 'success');
+        }
+
+        function checkAchievements() {
+            const a = userData.achievements;
+            let newAchievement = false;
+            const t = translations[currentLang];
+
+            if (userData.totalAds >= 1 && !a.includes('first_ad')) {
+                a.push('first_ad');
+                showMessage(t.achievementNew.replace('{name}', t.ach_first_ad), 'gold');
+                newAchievement = true;
+            }
+            if (userData.totalAds >= 100 && !a.includes('100_ads')) {
+                a.push('100_ads');
+                showMessage(t.achievementNew.replace('{name}', t.ach_100_ads) + ' +100 عملة', 'gold');
+                addCoins(100);
+                newAchievement = true;
+            }
+            if (userData.coins >= 1000 && !a.includes('1000_coins')) {
+                a.push('1000_coins');
+                showMessage(t.achievementNew.replace('{name}', t.ach_1000_coins) + ' +200 عملة', 'gold');
+                addCoins(200);
+                newAchievement = true;
+            }
+            if (userData.gems >= 50 && !a.includes('50_gems')) {
+                a.push('50_gems');
+                showMessage(t.achievementNew.replace('{name}', t.ach_50_gems) + ' +10 جواهر', 'gold');
+                addGems(10);
+                newAchievement = true;
+            }
+
+            if (newAchievement) updateUI();
+            updateAchievementsUI();
+        }
+
+        function updateAchievementsUI() {
+            const a = userData.achievements;
+            const list = document.getElementById('achievementsList');
+            const t = translations[currentLang];
+            const badges = [
+                { id: 'first_ad', label: t.ach_first_ad, done: a.includes('first_ad') },
+                { id: '100_ads', label: t.ach_100_ads, done: a.includes('100_ads') },
+                { id: '1000_coins', label: t.ach_1000_coins, done: a.includes('1000_coins') },
+                { id: '50_gems', label: t.ach_50_gems, done: a.includes('50_gems') }
+            ];
+            list.innerHTML = badges.map(b =>
+                `<span class="badge" style="background:${b.done ? '#2ea043' : '#8b949e'};">${b.label}</span>`
+            ).join('');
+        }
+
+        function checkChallenges() {
+            const t = translations[currentLang];
+            if (userData.totalAds >= 5 && !userData.challenge1_done) {
+                userData.challenge1_done = true;
+                addCoins(50);
+                showMessage(t.challengeComplete.replace('{name}', '5 إعلانات').replace('{reward}', '50 عملة'), 'gold');
+            }
+            if (userData.gamesPlayed >= 3 && !userData.challenge2_done) {
+                userData.challenge2_done = true;
+                addPoints(30);
+                showMessage(t.challengeComplete.replace('{name}', '3 ألعاب').replace('{reward}', '30 نقطة'), 'gold');
+            }
+            if (userData.shares >= 1 && !userData.challenge3_done) {
+                userData.challenge3_done = true;
+                addCoins(100);
+                showMessage(t.challengeComplete.replace('{name}', 'المشاركة').replace('{reward}', '100 عملة'), 'gold');
+            }
+            updateUI();
+        }
+
+        // ====== عجلة الحظ ======
+        function spinWheel() {
+            const t = translations[currentLang];
+            if (userData.coins < 50) {
+                showMessage(t.notEnoughCoins, 'error');
+                return;
+            }
+
+            userData.coins -= 50;
+            updateUI();
+
+            const prizes = [
+                { name: '100 عملة', value: 100, type: 'coins' },
+                { name: '50 عملة', value: 50, type: 'coins' },
+                { name: '5 جواهر', value: 5, type: 'gems' },
+                { name: '200 عملة', value: 200, type: 'coins' },
+                { name: '10 جواهر', value: 10, type: 'gems' },
+                { name: '💀 لا شيء', value: 0, type: 'none' }
+            ];
+
+            const rand = Math.random();
+            let index = 0;
+            if (rand < 0.30) index = 0;
+            else if (rand < 0.55) index = 1;
+            else if (rand < 0.70) index = 2;
+            else if (rand < 0.82) index = 3;
+            else if (rand < 0.92) index = 4;
+            else index = 5;
+
+            const prize = prizes[index];
+
+            const wheel = document.getElementById('wheel');
+            const deg = Math.floor(Math.random() * 360) + 720;
+            wheel.style.transform = `rotate(${deg}deg)`;
+
+            setTimeout(() => {
+                if (prize.type === 'coins') {
+                    addCoins(prize.value);
+                    showMessage(t.wheelSpin.replace('{prize}', prize.name), 'gold');
+                } else if (prize.type === 'gems') {
+                    addGems(prize.value);
+                    showMessage(t.wheelSpin.replace('{prize}', prize.name), 'gold');
+                } else {
+                    showMessage(t.wheelLose, 'info');
+                }
+            }, 3000);
+        }
+
+        // ====== وقت الذروة ======
+        let peakTimeActive = false;
+
+        function togglePeakTime() {
+            const t = translations[currentLang];
+            peakTimeActive = !peakTimeActive;
+            if (peakTimeActive) {
+                showMessage(t.peakActive, 'gold');
+            } else {
+                showMessage(t.peakInactive, 'info');
+            }
+        }
+
+        // ====== الأزرار ======
+        document.getElementById('watchCoinAd').onclick = function() {
+            userData.totalAds++;
+            let bonus = peakTimeActive ? 2 : 1;
+            addCoins(50 * bonus);
+            updateUI();
+            checkAchievements();
+            checkChallenges();
+        };
+
+        document.getElementById('watchGemAd').onclick = function() {
+            userData.totalAds++;
+            let bonus = peakTimeActive ? 2 : 1;
+            addGems(5 * bonus);
+            updateUI();
+            checkAchievements();
+            checkChallenges();
+        };
+
+        document.getElementById('playGame').onclick = function() {
+            const t = translations[currentLang];
+            const secret = Math.floor(Math.random() * 10) + 1;
+            const guess = prompt('🎮 خمن الرقم من 1 إلى 10:');
+            if (guess == secret) {
+                userData.gamesPlayed++;
+                addPoints(10);
+                showMessage(t.gameWin, 'success');
+                checkChallenges();
+            } else {
+                showMessage(t.gameLose.replace('{number}', secret), 'error');
+            }
+            updateUI();
+        };
+
+        document.getElementById('dailyBtn').onclick = function() {
+            const t = translations[currentLang];
+            const today = new Date().toDateString();
+            if (userData.lastDaily === today) {
+                showMessage(t.dailyRewardDone, 'error');
+            } else {
+                addCoins(100);
+                addGems(10);
+                userData.lastDaily = today;
+                updateUI();
+                showMessage('🎁 مكافأة يومية: 100 عملة + 10 جواهر!', 'gold');
+            }
+        };
+
+        document.getElementById('bonusAdBtn').onclick = function() {
+            userData.totalAds++;
+            addCoins(25);
+            updateUI();
+            checkAchievements();
+            checkChallenges();
+        };
+
+        document.getElementById('peakTimeBtn').onclick = togglePeakTime;
+
+        document.getElementById('withdrawBtn').onclick = function() {
+            const t = translations[currentLang];
+            if (userData.withdrawable < 100) {
+                showMessage(t.withdrawError.replace('{amount}', userData.withdrawable), 'error');
+            } else {
+                showMessage(t.withdrawSuccess.replace('{amount}', userData.withdrawable), 'success');
+                userData.withdrawable = 0;
+                updateUI();
+            }
+        };
+
+        document.getElementById('shareBtn').onclick = function() {
+            const t = translations[currentLang];
+            userData.shares++;
+            if (navigator.share) {
+                navigator.share({ title: 'MyBusiness', url: APP_URL });
+            } else {
+                navigator.clipboard.writeText(APP_URL);
+                showMessage(t.shareCopied, 'success');
+            }
+            updateUI();
+            checkChallenges();
+        };
+
+        document.getElementById('donateBtn').onclick = function() {
+            const t = translations[currentLang];
+            if (confirm('❤️ هل ترغب في التبرع لدعم تطوير التطبيق؟')) {
+                window.open('https://www.paypal.com/donate', '_blank');
+                showMessage(t.donateSuccess, 'gold');
+            }
+        };
+
+        // ====== ربط زر عجلة الحظ ======
+        document.getElementById('spinWheelBtn').onclick = spinWheel;
+
+        // ====== تحديث الرابط ======
+        document.getElementById('appLink').textContent = APP_URL;
+
+        // ====== تحميل البيانات ======
+        updateUI();
+        updateAchievementsUI();
+        checkChallenges();
+
+        // ====== في وحدة التحكم (Console) ======
+        console.log('🚀 AdMob Test ID loaded:', AD_UNIT_ID);
+        console.log('🚀 App URL:', APP_URL);
     </script>
 </body>
-    </html>
+</html>
