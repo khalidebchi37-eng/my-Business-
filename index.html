@@ -430,7 +430,7 @@
                 🔗 <span id="linkLabel">رابط التطبيق</span>: <span style="color:#f0b400;" id="appLink">https://my-business-648s.onrender.com</span>
             </div>
             <div style="font-size:9px; color:#30363d; margin-top:4px;">
-                ca-app-pub-3940256099942544/5224354917
+                ca-app-pub-9827427994409624/1680370601
             </div>
         </div>
 
@@ -443,8 +443,19 @@
         // ====== رابط التطبيق ======
         const APP_URL = 'https://my-business-648s.onrender.com';
 
-        // ====== رقم AdMob التجريبي (مباشر للاختبار) ======
-        const AD_UNIT_ID = 'ca-app-pub-3940256099942544/5224354917';
+        // ====== رقم AdMob الحقيقي ======
+        const AD_UNIT_ID = 'ca-app-pub-9827427994409624/1680370601';
+
+        // ====== Service Worker Registration (مطلوب من PWABuilder) ======
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) {
+                    console.log('✅ Service Worker تم تسجيله بنجاح!', registration);
+                })
+                .catch(function(error) {
+                    console.log('❌ فشل تسجيل Service Worker:', error);
+                });
+        }
 
         // ====== الترجمة ======
         const translations = {
@@ -936,21 +947,31 @@
 
         // ====== الأزرار ======
         document.getElementById('watchCoinAd').onclick = function() {
-            userData.totalAds++;
-            let bonus = peakTimeActive ? 2 : 1;
-            addCoins(50 * bonus);
-            updateUI();
-            checkAchievements();
-            checkChallenges();
+            // محاكاة عرض الإعلان
+            showMessage('🎬 جاري تحميل الإعلان...', 'info');
+            setTimeout(() => {
+                userData.totalAds++;
+                let bonus = peakTimeActive ? 2 : 1;
+                addCoins(50 * bonus);
+                updateUI();
+                checkAchievements();
+                checkChallenges();
+                showMessage('✅ تم مشاهدة الإعلان! +' + (50 * bonus) + ' عملة', 'success');
+            }, 1500);
         };
 
         document.getElementById('watchGemAd').onclick = function() {
-            userData.totalAds++;
-            let bonus = peakTimeActive ? 2 : 1;
-            addGems(5 * bonus);
-            updateUI();
-            checkAchievements();
-            checkChallenges();
+            // محاكاة عرض الإعلان
+            showMessage('🎬 جاري تحميل الإعلان...', 'info');
+            setTimeout(() => {
+                userData.totalAds++;
+                let bonus = peakTimeActive ? 2 : 1;
+                addGems(5 * bonus);
+                updateUI();
+                checkAchievements();
+                checkChallenges();
+                showMessage('✅ تم مشاهدة الإعلان! +' + (5 * bonus) + ' جوهرة', 'success');
+            }, 1500);
         };
 
         document.getElementById('playGame').onclick = function() {
@@ -983,11 +1004,16 @@
         };
 
         document.getElementById('bonusAdBtn').onclick = function() {
-            userData.totalAds++;
-            addCoins(25);
-            updateUI();
-            checkAchievements();
-            checkChallenges();
+            // محاكاة عرض إعلان إضافي
+            showMessage('🎬 جاري تحميل الإعلان الإضافي...', 'info');
+            setTimeout(() => {
+                userData.totalAds++;
+                addCoins(25);
+                updateUI();
+                checkAchievements();
+                checkChallenges();
+                showMessage('✅ تم مشاهدة الإعلان الإضافي! +25 عملة', 'success');
+            }, 1500);
         };
 
         document.getElementById('peakTimeBtn').onclick = togglePeakTime;
@@ -1036,8 +1062,9 @@
         checkChallenges();
 
         // ====== في وحدة التحكم (Console) ======
-        console.log('🚀 AdMob Test ID loaded:', AD_UNIT_ID);
+        console.log('🚀 AdMob Ad Unit ID:', AD_UNIT_ID);
         console.log('🚀 App URL:', APP_URL);
+        console.log('✅ Service Worker registered successfully!');
     </script>
 </body>
 </html>
